@@ -8,7 +8,7 @@
 * `taxi-ride-clean-code` código refatorado de forma mais "ingênua"
 * `taxi-ride-code-design` código com estrutura de design sustentando o comportamento
 * `taxi-ride-strategy` código com os padrões de projeto Strategy e Factory
-* `taxi-ride-chain-of-responsibility` código com o padrão de projeto Chain Of
+* `taxi-ride-chain-of-responsibility` código com o padrão de projeto Chain Of Responsibility
 
 ## Passo a passo
 
