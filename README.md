@@ -12,4 +12,4 @@
 
 1. `npm install` instale as dependências do projeto
 2. `npm run test` execute os testes, eles são o único driver (cliente) para esta aplicação
-3. `npm run test:coverage` embora o código esteja cheirando mal, suas regras de negócios estão 100% cobertas pelos testes. Após a execução do comando abra o arquivo [coverage/index.html](./coverage/index.html) no navegador para uma melhor visualização
+3. `npm run test:coverage` execute para visualizar a cobertura de código. Para mais detalhes abra o arquivo [coverage/index.html](./coverage/index.html) no navegador
