@@ -6,7 +6,9 @@
 
 * `taxi-ride-code-smells` código inicial, cheio de code smells, porém, passando nos testes
 * `taxi-ride-clean-code` código refatorado de forma mais "ingênua"
-* `taxi-ride-design-patterns` código refatorado com Design Patterns
+* `taxi-ride-code-design` código com estrutura de design sustentando o comportamento
+* `taxi-ride-strategy` código com os padrões de projeto Strategy e Factory
+* `taxi-ride-chain-of-responsibility` código com o padrão de projeto Chain Of
 
 ## Passo a passo
 
