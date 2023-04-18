@@ -37,7 +37,7 @@ describe.only('', () => {
   })
 
   it('deve lançar exceção para uma data inválida', () => {
-    expect(() => ride.addSegment(10, new Date('a'.repeat(10)))).toThrowError('invalid date')
+    expect(() => ride.addSegment(10, new Date('q'))).toThrowError('invalid date')
   })
 
   it('deve fazer uma corrida com o valor mínimo', () => {
@@ -45,4 +45,13 @@ describe.only('', () => {
     const fare = ride.calculateFare()
     expect(fare).toBe(10)
   })
+
+  it.each(['2021-03-10T07:00:00', '2021-03-10T07:30:00', '2021-03-10T18:30:00', '2021-03-10T19:00:00'])(
+    'deve fazer uma corrida em horário de pico %s',
+    (date) => {
+      ride.addSegment(10, new Date(date))
+      const fare = ride.calculateFare()
+      expect(fare).toBe(60)
+    },
+  )
 })
