@@ -1,11 +1,21 @@
 import { beforeEach, describe, expect, it } from 'vitest'
+import { NormalFareCalculatorHandler } from './normal-fare-calculator-handler'
+import { OvernightFareCalculatorHandler } from './overnight-fare-calculator-handler'
+import { PeakTimeFareCalculatorHandler } from './peak-time-fare-calculator-handler'
 import { TaxiRide } from './ride'
+import { SundayFareCalculatorHandler } from './sunday-fare-calculator-handler'
+import { SundayOvernightFareCalculatorHandler } from './sunday-overnight-fare-calculator-handler'
 
 describe.only('', () => {
   let ride: TaxiRide
 
   beforeEach(() => {
-    ride = new TaxiRide()
+    const normalFareHandler = new NormalFareCalculatorHandler()
+    const sundayHandler = new SundayFareCalculatorHandler(normalFareHandler)
+    const overnightHandler = new OvernightFareCalculatorHandler(sundayHandler)
+    const overnightSundayHandler = new SundayOvernightFareCalculatorHandler(overnightHandler)
+    const peakTimeHandler = new PeakTimeFareCalculatorHandler(overnightSundayHandler)
+    ride = new TaxiRide(peakTimeHandler)
   })
 
   it('deve fazer uma corrida em um dia de semana e em horário normal', () => {

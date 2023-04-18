@@ -1,5 +1,6 @@
 import { Segment } from './segment'
 
-export interface FareCalculatorStrategy {
+export interface FareCalculatorHandler {
+  next?: FareCalculatorHandler
   calculate(segment: Segment): number
 }
